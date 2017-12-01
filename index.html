@@ -8,9 +8,15 @@
 <body>
   <div id="app">
     {{ message }}
+    <global-component></global-component>
   </div>
 
   <script>
+// register global component
+Vue.component('global-component', {
+  template: '<div>A custom global component!</div>'
+})
+
 var app = new Vue({
   el: '#app',
   data: {
