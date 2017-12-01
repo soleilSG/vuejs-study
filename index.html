@@ -7,20 +7,13 @@
 </head>
 <body>
   <div id="app">
-    <simple-counter></simple-counter>
-    <simple-counter></simple-counter>
-    <simple-counter></simple-counter>
-  </div>
+    <child my-message="hello"></child>
   </div>
 
   <script>
-Vue.component('simple-counter', {
-  template: '<button v-on:click="counter += 1">{{ counter }}</button>',
-  data: function() {
-    return {
-      counter: 0
-    }
-  }
+Vue.component('child', {
+  props: ['myMessage'],
+  template: '<span>{{ myMessage }}</span>'
 })
 
 var app = new Vue({
